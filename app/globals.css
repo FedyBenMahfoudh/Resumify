@@ -204,6 +204,10 @@
   background-clip: text;
 }
 
+ .text-gradient-blur {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-[#AB8C95] via-[#353535da] to-[#8E97C5];
+  }
+
 .background-gradient {
   background: linear-gradient(
     45deg,

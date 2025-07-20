@@ -49,7 +49,9 @@ export const FileUpload = ({
     if (!newFile) return;
     if (validatePDF(newFile)) {
       setFile(newFile);// Set the first file as the current file
-      onChange && onChange([newFile]);
+      if (onChange) {
+        onChange([newFile]);
+      }
     }
     else {
       // Reset input
@@ -162,7 +164,7 @@ export const FileUpload = ({
                 layoutId="file-upload"
                 variants={mainVariant}
                 transition={{
-                  type: "sblng",
+                  type: "spring",
                   stiffness: 300,
                   damping: 20,
                 }}

@@ -78,7 +78,7 @@ export function LoginForm({
                 <div className="flex items-center">
                   <Label htmlFor="password">Password</Label>
                   <Link
-                    href="/auth/forgot-password"
+                    href="/forgot-password"
                     className="ml-auto inline-block text-sm underline-offset-4 hover:underline"
                   >
                     Forgot your password?
@@ -93,7 +93,12 @@ export function LoginForm({
                 />
               </div>
               {error && <p className="text-sm text-red-500">{error}</p>}
-              <Button type="submit" className="w-full" disabled={isLoading}>
+              <Button
+                type="submit"
+                variant={"default"}
+                className="w-full"
+                disabled={isLoading}
+              >
                 {isLoading ? (
                   <>
                     <Icons.spinner className="mr-2 size-4 animate-spin" />
@@ -109,10 +114,7 @@ export function LoginForm({
             </div>
             <div className="my-4 text-center text-sm">
               Don&apos;t have an account?{" "}
-              <Link
-                href="/sign-up"
-                className="underline underline-offset-4"
-              >
+              <Link href="/sign-up" className="underline underline-offset-4">
                 Sign up
               </Link>
             </div>
@@ -129,7 +131,7 @@ export function LoginForm({
           </div>
           <div className="flex flex-col gap-2 justify-center">
             <Button
-              variant="default"
+              variant="outline"
               className="w-full"
               disabled={signInClicked}
             >
@@ -147,7 +149,7 @@ export function LoginForm({
             </Button>
 
             {/* GitHub sign-in button */}
-            <Button variant="default">
+            <Button variant="outline">
               {signInWithGitHubClicked ? (
                 <>
                   <Icons.spinner className="mr-2 size-4 animate-spin" />

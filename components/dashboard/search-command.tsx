@@ -41,7 +41,7 @@ export function SearchCommand({ links }: { links: SidebarNavItem[] }) {
       <Button
         variant="outline"
         className={cn(
-          "font-sans relative w-full items-center justify-start rounded-md bg-muted/50 text-sm font-normal text-muted-foreground shadow-none sm:pr-12 md:w-72",
+          "font-sans relative w-full items-center justify-start rounded-md bg-muted/50 text-sm font-normal text-muted-foreground shadow-none sm:pr-12 md:w-72"
         )}
         onClick={() => setOpen(true)}
       >
@@ -68,6 +68,7 @@ export function SearchCommand({ links }: { links: SidebarNavItem[] }) {
                     onSelect={() => {
                       runCommand(() => router.push(item.href as string));
                     }}
+                    disabled={item.disabled}
                   >
                     <Icon className="mr-2 size-5" />
                     {item.title}

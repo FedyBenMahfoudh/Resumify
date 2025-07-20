@@ -28,6 +28,7 @@ import {
 } from "@/components/ui/tooltip";
 
 import { Icons } from "@/components/shared/icons";
+import Image from "next/image";
 
 interface DashboardSidebarProps {
   links: SidebarNavItem[];
@@ -50,7 +51,7 @@ export function DashboardSidebar({ links }: DashboardSidebarProps) {
     if (typeof window !== "undefined") {
       window.localStorage.setItem(
         "sidebarExpanded",
-        JSON.stringify(isSidebarExpanded),
+        JSON.stringify(isSidebarExpanded)
       );
     }
   }, [isSidebarExpanded]);
@@ -73,7 +74,7 @@ export function DashboardSidebar({ links }: DashboardSidebarProps) {
           <aside
             className={cn(
               isSidebarExpanded ? "w-[220px] xl:w-[260px]" : "w-[68px]",
-              "hidden h-screen md:block",
+              "hidden h-screen md:block"
             )}
           >
             <div className="flex h-full max-h-screen flex-1 flex-col gap-2">
@@ -82,8 +83,7 @@ export function DashboardSidebar({ links }: DashboardSidebarProps) {
                 {isSidebarExpanded ? (
                   <div className="flex w-full items-center">
                     <Link href="/" className="flex items-center space-x-2">
-                      <Icons.logo className="size-6" />
-                      <span className="font-urban text-lg font-bold">
+                      <span className="font-urban text-gradient-blur text-lg font-bold">
                         {siteConfig.name}
                       </span>
                     </Link>
@@ -92,6 +92,7 @@ export function DashboardSidebar({ links }: DashboardSidebarProps) {
 
                 <Button
                   size="icon"
+                  variant={"outline"}
                   className="size-9 shrink-0"
                   onClick={toggleSidebar}
                 >
@@ -138,7 +139,7 @@ export function DashboardSidebar({ links }: DashboardSidebarProps) {
                                     ? "bg-muted"
                                     : "text-muted-foreground hover:text-accent-foreground",
                                   item.disabled &&
-                                    "cursor-not-allowed opacity-80 hover:bg-transparent hover:text-muted-foreground",
+                                    "cursor-not-allowed opacity-80 hover:bg-transparent hover:text-muted-foreground"
                                 )}
                               >
                                 <Icon className="size-5" />
@@ -161,7 +162,7 @@ export function DashboardSidebar({ links }: DashboardSidebarProps) {
                                         ? "bg-muted"
                                         : "text-muted-foreground hover:text-accent-foreground",
                                       item.disabled &&
-                                        "cursor-not-allowed opacity-80 hover:bg-transparent hover:text-muted-foreground",
+                                        "cursor-not-allowed opacity-80 hover:bg-transparent hover:text-muted-foreground"
                                     )}
                                   >
                                     <span className="flex size-full items-center justify-center">
@@ -253,7 +254,7 @@ export function MobileSheetSidebar({ links }: DashboardSidebarProps) {
                                   ? "bg-muted"
                                   : "text-muted-foreground hover:text-accent-foreground",
                                 item.disabled &&
-                                  "cursor-not-allowed opacity-80 hover:bg-transparent hover:text-muted-foreground",
+                                  "cursor-not-allowed opacity-80 hover:bg-transparent hover:text-muted-foreground"
                               )}
                             >
                               <Icon className="size-5" />
@@ -270,7 +271,6 @@ export function MobileSheetSidebar({ links }: DashboardSidebarProps) {
                     })}
                   </section>
                 ))}
-
               </nav>
             </div>
           </ScrollArea>

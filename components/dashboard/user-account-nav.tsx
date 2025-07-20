@@ -88,7 +88,7 @@ export function UserAccountNav({ user }: { user: User | null }) {
 
               <li className="rounded-lg text-foreground hover:bg-muted">
                 <Link
-                  href="/settings"
+                  href="/profile"
                   onClick={closeDrawer}
                   className="font-sans flex w-full items-center gap-3 px-2.5 py-2"
                 >

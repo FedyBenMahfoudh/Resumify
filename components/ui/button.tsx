@@ -13,7 +13,7 @@ const buttonVariants = cva(
         destructive:
           "bg-destructive text-destructive-foreground hover:bg-destructive/90",
         outline:
-          "border border-input hover:bg-accent hover:text-accent-foreground",
+          "border border-input bg-gradient-to-br from-gray-100 to-gray-200 hover:text-accent-foreground dark:from-neutral-900 dark:to-neutral-800 shadow-[0px_1px_0px_0px_#ffffff40_inset,0px_-1px_0px_0px_#ffffff40_inset] dark:shadow-[0px_1px_0px_0px_var(--zinc-800)_inset,0px_-1px_0px_0px_var(--zinc-800)_inset] hover:bg-gradient-to-br hover:from-gray-200 hover:to-gray-300 dark:hover:from-neutral-800 dark:hover:to-neutral-700 ",
         secondary:
           "bg-secondary text-secondary-foreground hover:bg-secondary/80",
         ghost: "hover:bg-accent hover:text-accent-foreground",
@@ -41,7 +41,7 @@ const buttonVariants = cva(
       size: "default",
       rounded: "default",
     },
-  },
+  }
 );
 
 const BottomGradient: React.FC<{ className?: string }> = ({ className }) => (
@@ -49,13 +49,13 @@ const BottomGradient: React.FC<{ className?: string }> = ({ className }) => (
     <span
       className={cn(
         "absolute inset-x-0 -bottom-px block h-px w-full bg-gradient-to-r from-transparent via-primary to-transparent opacity-0 transition duration-500 group-hover/btn:opacity-100",
-        className,
+        className
       )}
     />
     <span
       className={cn(
         "absolute inset-x-10 -bottom-px mx-auto block h-px w-1/2 bg-gradient-to-r from-transparent via-primary to-transparent opacity-0 blur-sm transition duration-500 group-hover/btn:opacity-100",
-        className,
+        className
       )}
     />
   </>
@@ -72,16 +72,16 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         className={cn(
           buttonVariants({ variant, size, rounded, className }),
           "group/btn relative h-10 rounded-md font-medium",
-          "bg-gradient-to-br from-gray-100 to-gray-200",
-          "dark:from-neutral-900 dark:to-neutral-800",
-          "shadow-[0px_1px_0px_0px_#ffffff40_inset,0px_-1px_0px_0px_#ffffff40_inset]",
-          "dark:shadow-[0px_1px_0px_0px_var(--zinc-800)_inset,0px_-1px_0px_0px_var(--zinc-800)_inset]",
+          // "bg-gradient-to-br from-gray-100 to-gray-200",
+          // "dark:from-neutral-900 dark:to-neutral-800",
+          // "shadow-[0px_1px_0px_0px_#ffffff40_inset,0px_-1px_0px_0px_#ffffff40_inset]",
+          // "dark:shadow-[0px_1px_0px_0px_var(--zinc-800)_inset,0px_-1px_0px_0px_var(--zinc-800)_inset]",
 
           "transition-all duration-300",
-          "hover:bg-gradient-to-br hover:from-gray-200 hover:to-gray-300",
-          "dark:hover:from-neutral-800 dark:hover:to-neutral-700",
+          // "hover:bg-gradient-to-br hover:from-gray-200 hover:to-gray-300",
+          // "dark:hover:from-neutral-800 dark:hover:to-neutral-700",
           "hover:shadow-lg",
-          "hover:ring-2 hover:ring-primary/20",
+          "hover:ring-2 hover:ring-primary/20"
         )}
         ref={ref}
         {...props}
@@ -90,7 +90,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         <BottomGradient />
       </button>
     );
-  },
+  }
 );
 
 Button.displayName = "Button";
